@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Prime - Panel de Administración</title>
+    <link rel="stylesheet" href="css/principal-admin.css"> <!-- Enlaza el archivo CSS -->
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de Auto Prime">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="principal-admin.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Gestión</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="gestion-vehiculo.html">Gestión de Vehículos</a></li>
+                        <li><a href="gestion-citas.html">Gestión de Citas</a></li>
+                        <li><a href="gestion-usuario.html">Gestión de Usuarios</a></li>
+                    </ul>
+                </li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+            </ul>
+        </nav>
+        <!-- Ícono de usuario -->
+        <div class="usuario-menu">
+            <img src="imagenes/usuario-icono.png" alt="Usuario" class="usuario-icono" onclick="toggleUserMenu()">
+            <div class="dropdown-usuario" id="menuUsuario">
+                <p id="nombreUsuario">Administrador</p>
+                <a href="inicio-sesion.html" id="opcionUsuario">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección principal del administrador -->
+    <section class="admin-hero">
+        <div class="admin-hero-content">
+            <h1>Bienvenido al Panel de Administración</h1>
+            <p>Gestiona tu concesionario de manera eficiente y profesional.</p>
+        </div>
+    </section>
+
+    <!-- Sección de estadísticas -->
+    <section class="estadisticas">
+        <h2>Estadísticas Generales</h2>
+        <div class="estadisticas-grid">
+            <div class="estadistica">
+                <h3>Vehículos Disponibles</h3>
+                <p>150</p>
+            </div>
+            <div class="estadistica">
+                <h3>Citas Programadas</h3>
+                <p>25</p>
+            </div>
+            <div class="estadistica">
+                <h3>Ventas del Mes</h3>
+                <p>10</p>
+            </div>
+            <div class="estadistica">
+                <h3>Clientes Registrados</h3>
+                <p>300</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de acciones rápidas -->
+    <section class="acciones-rapidas">
+        <h2>Acciones Rápidas</h2>
+        <div class="acciones-grid">
+            <a href="gestion-vehiculo.html" class="accion">
+                <img src="imagenes/icono-vehiculos.png" alt="Vehículos">
+                <p>Gestionar Vehículos</p>
+            </a>
+            <a href="gestion-citas.html" class="accion">
+                <img src="imagenes/icono-citas.png" alt="Citas">
+                <p>Gestionar Citas</p>
+            </a>
+            <a href="gestion-usuario.html" class="accion">
+                <img src="imagenes/icono-usuarios.png" alt="Usuarios">
+                <p>Gestionar Usuarios</p>
+            </a>
+            <a href="reportes.html" class="accion">
+                <img src="imagenes/icono-reportes.png" alt="Reportes">
+                <p>Ver Reportes</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de últimas actividades -->
+    <section class="ultimas-actividades">
+        <h2>Últimas Actividades</h2>
+        <div class="actividades-grid">
+            <div class="actividad">
+                <p><strong>Nuevo vehículo agregado:</strong> Chevrolet Captiva 2023</p>
+                <span>Hace 2 horas</span>
+            </div>
+            <div class="actividad">
+                <p><strong>Cita programada:</strong> Juan Pérez - 10:00 AM</p>
+                <span>Hace 5 horas</span>
+            </div>
+            <div class="actividad">
+                <p><strong>Venta realizada:</strong> Toyota Corolla 2022</p>
+                <span>Hace 1 día</span>
+            </div>
+            <div class="actividad">
+                <p><strong>Nuevo usuario registrado:</strong> María González</p>
+                <span>Hace 2 días</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Auto Prime. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar el menú de usuario
+        function toggleUserMenu() {
+            const userMenu = document.getElementById("menuUsuario");
+            if (userMenu.style.display === "block") {
+                userMenu.style.display = "none";
+            } else {
+                userMenu.style.display = "block";
+            }
+        }
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById("menuUsuario");
+            const userIcon = document.querySelector(".usuario-icono");
+            if (!userIcon.contains(event.target)) {
+                userMenu.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Prime - Programar Cita</title>
+    <link rel="stylesheet" href="Css/programarcita.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de Auto Prime">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programar-cita.html">Programar Cita</a></li>
+                        <li><a href="solicitar-servicio.html">Solicitar Servicio</a></li>
+                    </ul>
+                </li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Ícono de usuario -->
+        <div class="usuario-menu">
+            <img src="imagenes/usuario-icono.png" alt="Usuario" class="usuario-icono" onclick="toggleUserMenu()">
+            <div class="dropdown-usuario" id="menuUsuario">
+                <p id="nombreUsuario">Iniciar Sesión / Registrarse</p>
+                <a href="inicio-sesion.html" id="opcionUsuario">Acceder</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de programación de citas con imagen de fondo -->
+    <section class="programar-cita">
+        <!-- Imagen de fondo -->
+        <div class="cita-fondo" style="background-image: url('imagenes/banner-oferta.jpg');"></div>
+        <!-- Capa oscura para mejorar la legibilidad -->
+        <div class="cita-overlay"></div>
+        <!-- Contenido del formulario -->
+        <div class="cita-content">
+            <h2>Programar Cita</h2>
+            <form id="form-cita">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha de la Cita:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora de la Cita:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+                <div class="form-group">
+                    <label for="concesionario">Concesionario:</label>
+                    <select id="concesionario" name="concesionario" required>
+                        <option value="">Seleccione un concesionario</option>
+                        <option value="centro">Concesionario Centro</option>
+                        <option value="norte">Concesionario Norte</option>
+                        <option value="sur">Concesionario Sur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Programar Cita</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Auto Prime. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar el menú de usuario
+        function toggleUserMenu() {
+            const userMenu = document.getElementById("menuUsuario");
+            if (userMenu.style.display === "block") {
+                userMenu.style.display = "none";
+            } else {
+                userMenu.style.display = "block";
+            }
+        }
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById("menuUsuario");
+            const userIcon = document.querySelector(".usuario-icono");
+            if (!userIcon.contains(event.target)) {
+                userMenu.style.display = "none";
+            }
+        });
+
+        // Validación del formulario de cita
+        document.getElementById("form-cita").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Cita programada con éxito. Nos pondremos en contacto contigo pronto.");
+        });
+    </script>
+</body>
+</html>

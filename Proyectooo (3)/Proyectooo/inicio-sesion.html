@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Auto Prime</title>
+    <link rel="stylesheet" href="css/inicio-sesion.css"> <!-- Enlaza tu archivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de Auto Prime">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Botón de usuario -->
+        <div class="usuario-menu">
+            <img src="imagenes/usuario-icono.png" alt="Usuario" class="usuario-icono" onclick="toggleUserMenu()">
+            <div class="dropdown-usuario" id="menuUsuario">
+                <p id="nombreUsuario">Iniciar Sesión / Registrarse</p>
+                <a href="inicio-sesion.html" id="opcionUsuario">Acceder</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="inicio-sesion-container">
+        <div class="inicio-sesion-formulario">
+            <h1>Iniciar Sesión</h1>
+            <form id="inicioSesionForm" action="#" method="post">
+                <div class="form-group">
+                    <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <div class="opciones-adicionales">
+                    <a href="Recuperar-contraseña.html">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-iniciar-sesion">INICIAR SESIÓN</button>
+            </form>
+
+            <div class="registro-link">
+                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+            </div>
+
+            <div class="separador">
+                <span>o</span>
+            </div>
+
+            <div class="acceso-social">
+                <h2>Acceder con:</h2>
+                <div class="social-buttons">
+                    <button class="google" onclick="loginWithGoogle()">
+                        <img src="imagenes/google-icon.png" alt="Google Icon"> Google
+                    </button>
+                    <button class="facebook" onclick="loginWithFacebook()">
+                        <img src="imagenes/facebook-icon.png" alt="Facebook Icon"> Facebook
+                    </button>
+                    <button class="microsoft" onclick="loginWithMicrosoft()">
+                        <img src="imagenes/microsoft.png" alt="Microsoft Icon"> Microsoft
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Auto Prime. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar el menú de usuario
+        function toggleUserMenu() {
+            const userMenu = document.getElementById("menuUsuario");
+            if (userMenu.style.display === "block") {
+                userMenu.style.display = "none";
+            } else {
+                userMenu.style.display = "block";
+            }
+        }
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById("menuUsuario");
+            const userIcon = document.querySelector(".usuario-icono");
+            if (!userIcon.contains(event.target)) {
+                userMenu.style.display = "none";
+            }
+        });
+
+        // Función para manejar el inicio de sesión
+        document.getElementById('inicioSesionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+            // Aquí puedes agregar la lógica para validar el inicio de sesión
+            // Por ejemplo, verificar el correo y la contraseña
+
+            // Simulación de inicio de sesión exitoso
+            const correo = document.getElementById('correo').value;
+            const contraseña = document.getElementById('contraseña').value;
+
+            if (correo && contraseña) { // Validación básica
+                // Redirigir a la página principal después de un inicio de sesión exitoso
+                window.location.href = 'Principal.html';
+            } else {
+                alert('Por favor, ingresa un correo y una contraseña válidos.');
+            }
+        });
+
+        // Funciones para inicio de sesión con redes sociales (simulación)
+        function loginWithGoogle() {
+            alert('Iniciando sesión con Google...');
+            // Redirigir a la página principal después de un inicio de sesión exitoso
+            window.location.href = 'Principal.html';
+        }
+
+        function loginWithFacebook() {
+            alert('Iniciando sesión con Facebook...');
+            // Redirigir a la página principal después de un inicio de sesión exitoso
+            window.location.href = 'Principal.html';
+        }
+
+        function loginWithMicrosoft() {
+            alert('Iniciando sesión con Microsoft...');
+            // Redirigir a la página principal después de un inicio de sesión exitoso
+            window.location.href = 'Principal.html';
+        }
+    </script>
+</body>
+</html>

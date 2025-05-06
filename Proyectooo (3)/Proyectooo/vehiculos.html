@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Vehículos - Auto Prime</title>
+    <link rel="stylesheet" href="css/vehiculos.css"> <!-- Enlaza tu archivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de Auto Prime">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programar-cita.html">Programar Cita</a></li>
+                        <li><a href="solicitar-servicio.html">Solicitar Servicio</a></li>
+                    </ul>
+                </li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Ícono de usuario -->
+        <div class="usuario-menu">
+            <img src="imagenes/usuario-icono.png" alt="Usuario" class="usuario-icono" onclick="toggleUserMenu()">
+            <div class="dropdown-usuario" id="menuUsuario">
+                <p id="nombreUsuario">Iniciar Sesión / Registrarse</p>
+                <a href="inicio-sesion.html" id="opcionUsuario">Acceder</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner promocional -->
+    <section class="banner-promocional">
+        <div class="banner-contenido">
+            <h2>¡Ofertas Especiales!</h2>
+            <p>Descubre nuestras increíbles promociones en vehículos nuevos y usados.</p>
+            <a href="#ofertas" class="btn-banner">Ver Ofertas</a>
+        </div>
+    </section>
+
+    <!-- Sección de Catálogo de Vehículos -->
+    <section class="catalogo">
+        <h1>Catálogo de Vehículos</h1>
+        <div class="filtros">
+            <div class="filtro">
+                <label for="precio">Precio:</label>
+                <input type="range" id="precio" name="precio" min="0" max="100000" step="1000">
+                <span id="precio-valor">$0 - $100,000</span>
+            </div>
+            <div class="filtro">
+                <label for="marca">Marca:</label>
+                <select id="marca" name="marca">
+                    <option value="todos">Todos</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="ford">Ford</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="honda">Honda</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class="filtro">
+                <label for="transmision">Transmisión:</label>
+                <select id="transmision" name="transmision">
+                    <option value="todos">Todos</option>
+                    <option value="automatico">Automático</option>
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+            <button class="btn-filtrar">Filtrar</button>
+            <button class="btn-reset">Resetear Filtros</button>
+        </div>
+
+        <div class="vehiculos-grid">
+            <!-- Ejemplo de vehículo 1 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/chevroletcaptiva2007.jpg" alt="Chevrolet Captiva 2007">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Chevrolet Captiva 2007</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $5,700.00</p>
+                        <p><strong>Transmisión:</strong> Manual</p>
+                        <p><strong>Potencia:</strong> 127 CV</p>
+                    </div>
+                    <nav><a href="detalleschevrolet.html"><button class="btn-detalles">Ver Detalles
+                    </button>
+                </nav>
+                </div></a>
+            </div>
+
+            <!-- Ejemplo de vehículo 2 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/FordMustang2020.jpg" alt="Ford Mustang 2020">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Ford Mustang 2020</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $45,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 450 CV</p>
+                    </div>
+                    <nav><a href="fordmustang2020.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+            <!-- Ejemplo de vehículo 3 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/ToyotaCorolla2021.jpg" alt="Toyota Corolla 2021">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Toyota Corolla 2021</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $22,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 169 CV</p>
+                    </div>
+                    <nav><a href="ToyotaCorolla2021.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+            <!-- Ejemplo de vehículo 4 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/BMX5.jpg" alt="BMW X5 2019">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>BMW X5 2019</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $60,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 340 CV</p>
+                    </div>
+                    <nav><a href="BMWX.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+            <!-- Ejemplo de vehículo 5 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/2022-audi-a4-mmp-1-1621027611.avif" alt="Audi A4 2022">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Audi A4 2022</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $48,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 201 CV</p>
+                    </div>
+                    <nav><a href="AudiA42022.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+            <!-- Ejemplo de vehículo 6 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/Honda.jpeg" alt="Honda Civic 2021">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Honda Civic 2021</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $25,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 158 CV</p>
+                    </div>
+                    <nav><a href="HondaCivic2021.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+            <!-- Ejemplo de vehículo 7 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/volkswagen-golf-gti-my20-1001x565-(1).jpg" alt="Volkswagen Golf 2020">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Volkswagen Golf 2020</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $28,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 147 CV</p>
+                    </div>
+                    <nav><a href="VolkswagenGolf2020.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+            <!-- Ejemplo de vehículo 8 -->
+            <div class="vehiculo">
+                <div class="vehiculo-imagen">
+                    <img src="imagenes/2023_mercedes-benz_c-class_coupe_amg-c-43_fq_oem_4_815.avif" alt="Mercedes-Benz C-Class 2021">
+                </div>
+                <div class="vehiculo-info">
+                    <h3>Mercedes-Benz C-Class 2021</h3>
+                    <div class="vehiculo-datos">
+                        <p><strong>Precio:</strong> $55,000.00</p>
+                        <p><strong>Transmisión:</strong> Automático</p>
+                        <p><strong>Potencia:</strong> 255 CV</p>
+                    </div>
+                    <nav><a href="Mercedes-Benz C-Class2021.html"><button class="btn-detalles">Ver Detalles
+                    </nav>
+                </button></a>
+                </div>
+            </div>
+
+
+            <!-- Más vehículos pueden agregarse aquí -->
+        </div>
+    </section>
+
+    <!-- Sección de Ofertas Especiales -->
+    <section id="ofertas" class="ofertas-especiales">
+        <h2>Ofertas Especiales</h2>
+        <div class="ofertas-grid">
+            <div class="oferta">
+                <img src="imagenes/chevroletcaptiva2007.jpg" alt="Oferta 1">
+                <h3>Chevrolet Captiva 2007</h3>
+                <p><strong>Precio:</strong> $5,000.00</p>
+                <p><strong>Ahorra:</strong> $700.00</p>
+            <nav><a href="detalleschevrolet.html"><button class="btn-detalles">Ver Detalles
+            </button>
+        </nav></a>
+    </div>
+            <div class="oferta">
+                <img src="imagenes/FordMustang2020.jpg" alt="Oferta 2">
+                <h3>Ford Mustang 2020</h3>
+                <p><strong>Precio:</strong> $42,000.00</p>
+                <p><strong>Ahorra:</strong> $3,000.00</p>
+                <nav><a href="fordmustang2020.html"><button class="btn-detalles">Ver Detalles
+                </button>
+            </nav></a>
+        </div>
+            <div class="oferta">
+                <img src="imagenes/ToyotaCorolla2021.jpg" alt="Oferta 3">
+                <h3>Toyota Corolla 2021</h3>
+                <p><strong>Precio:</strong> $20,000.00</p>
+                <p><strong>Ahorra:</strong> $2,000.00</p>
+                <nav><a href="ToyotaCorolla2021.html"><button class="btn-detalles">Ver Detalles
+                </button>
+            </nav></a>
+        </div>
+        </div>
+    </section>
+
+    <!-- Sección de Reseñas de Clientes -->
+    <section class="reseñas-clientes">
+        <h2>Reseñas de Clientes</h2>
+        <div class="reseñas-grid">
+            <div class="reseña">
+                <div class="reseña-header">
+                    <img src="imagenes/reseña1.jpg" alt="Cliente 1">
+                    <h3>Juan Pérez</h3>
+                </div>
+                <p>"Excelente servicio y atención al cliente. Encontré el auto perfecto para mi familia."</p>
+                <div class="reseña-estrellas">★★★★★</div>
+            </div>
+            <div class="reseña">
+                <div class="reseña-header">
+                    <img src="imagenes/cliente2.jpg" alt="Cliente 2">
+                    <h3>María Gómez</h3>
+                </div>
+                <p>"El proceso de compra fue muy sencillo y rápido. ¡Recomiendo Auto Prime!"</p>
+                <div class="reseña-estrellas">★★★★★</div>
+            </div>
+            <div class="reseña">
+                <div class="reseña-header">
+                    <img src="imagenes/cliente3.jpg" alt="Cliente 3">
+                    <h3>Carlos López</h3>
+                </div>
+                <p>"Gran variedad de vehículos y precios competitivos. Volveré a comprar aquí."</p>
+                <div class="reseña-estrellas">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Auto Prime. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar el menú de usuario
+        function toggleUserMenu() {
+            const userMenu = document.getElementById("menuUsuario");
+            if (userMenu.style.display === "block") {
+                userMenu.style.display = "none";
+            } else {
+                userMenu.style.display = "block";
+            }
+        }
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById("menuUsuario");
+            const userIcon = document.querySelector(".usuario-icono");
+            if (!userIcon.contains(event.target)) {
+                userMenu.style.display = "none";
+            }
+        });
+
+        // Actualizar el valor del rango de precio
+        const precioSlider = document.getElementById("precio");
+        const precioValor = document.getElementById("precio-valor");
+
+        precioSlider.addEventListener('input', function() {
+            const maxPrecio = 100000;
+            const valor = precioSlider.value;
+            precioValor.textContent = `$0 - $${valor}`;
+        });
+
+        // Resetear filtros
+        document.querySelector('.btn-reset').addEventListener('click', function() {
+            document.getElementById('precio').value = 100000;
+            document.getElementById('marca').value = 'todos';
+            document.getElementById('transmision').value = 'todos';
+            precioValor.textContent = '$0 - $100,000';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../imagenes/fondo.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .logo {
+    position: absolute; /* Posiciona el logo a la izquierda */
+    left: 20px;
+}
+
+header .logo img {
+    height: 60px; /* Tamaño del logo */
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el cursor */
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centra el menú horizontalmente */
+    align-items: center; /* Centra el menú verticalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px; /* Espacio entre los elementos del menú */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #00a1f1; /* Cambio de color al pasar el cursor */
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Estilos para el icono de usuario */
+.usuario-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.usuario-icono {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.usuario-icono:hover {
+    transform: scale(1.1);
+}
+
+/* Menú desplegable */
+.dropdown-usuario {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 150px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.dropdown-usuario p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.dropdown-usuario a {
+    display: block;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #00a1f1;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-usuario a:hover {
+    background-color: #0088cc;
+}
+
+/* Contenedor de recuperación de contraseña */
+.recuperar-contraseña-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    margin-top: 120px; /* Espacio para el header */
+}
+
+.recuperar-contraseña-formulario h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00a1f1;
+    outline: none;
+}
+
+.btn-recuperar-contraseña {
+    width: 100%;
+    padding: 15px;
+    background-color: #00a1f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-recuperar-contraseña:hover {
+    background-color: #0088cc;
+    transform: translateY(-3px);
+}
+
+.enlace-inicio-sesion {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.enlace-inicio-sesion a {
+    color: #00a1f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enlace-inicio-sesion a:hover {
+    color: #0088cc;
+}
+
+.mensaje-confirmacion {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.mensaje-confirmacion p {
+    margin-bottom: 20px;
+}
+
+.btn-volver-inicio-sesion {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00a1f1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-volver-inicio-sesion:hover {
+    background-color: #0088cc;
+    transform: translateY(-3px);
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    bottom: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .recuperar-contraseña-container {
+        padding: 20px;
+        margin-top: 80px; /* Menos espacio para el header en móviles */
+    }
+
+    header .logo img {
+        height: 50px; /* Logo más pequeño en móviles */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Texto más pequeño en móviles */
+    }
+}

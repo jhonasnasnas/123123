@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - Auto Prime</title>
+    <link rel="stylesheet" href="css/RecuperarContraseña.css"> <!-- Enlaza tu archivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de Auto Prime">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Ícono de usuario -->
+        <div class="usuario-menu">
+            <img src="imagenes/usuario-icono.png" alt="Usuario" class="usuario-icono" onclick="toggleUserMenu()">
+            <div class="dropdown-usuario" id="menuUsuario">
+                <p id="nombreUsuario">Iniciar Sesión / Registrarse</p>
+                <a href="inicio-sesion.html" id="opcionUsuario">Acceder</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="recuperar-contraseña-container">
+        <div class="recuperar-contraseña-formulario">
+            <h1>Recuperar Contraseña</h1>
+            <form id="recuperarContraseñaForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+                </div>
+
+                <button type="submit" class="btn-recuperar-contraseña">RECUPERAR CONTRASEÑA</button>
+            </form>
+            <p class="enlace-inicio-sesion">¿Recordaste tu contraseña? <a href="inicio-sesion.html">Inicia sesión</a></p>
+            <div id="mensajeConfirmacion" class="mensaje-confirmacion" style="display: none;">
+                <p>Hemos enviado un correo electrónico con las instrucciones para recuperar tu contraseña.</p>
+                <a href="inicio-sesion.html" class="btn-volver-inicio-sesion">Volver al inicio de sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Auto Prime. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar el menú de usuario
+        function toggleUserMenu() {
+            const userMenu = document.getElementById("menuUsuario");
+            if (userMenu.style.display === "block") {
+                userMenu.style.display = "none";
+            } else {
+                userMenu.style.display = "block";
+            }
+        }
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById("menuUsuario");
+            const userIcon = document.querySelector(".usuario-icono");
+            if (!userIcon.contains(event.target)) {
+                userMenu.style.display = "none";
+            }
+        });
+
+        // Manejar el envío del formulario de recuperación de contraseña
+        document.getElementById('recuperarContraseñaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+
+            // Mostrar el mensaje de confirmación
+            const mensajeConfirmacion = document.getElementById('mensajeConfirmacion');
+            mensajeConfirmacion.style.display = 'block';
+
+            // Ocultar el formulario
+            const formulario = document.getElementById('recuperarContraseñaForm');
+            formulario.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
